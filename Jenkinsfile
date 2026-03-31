@@ -9,7 +9,7 @@ pipeline {
 
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/Avejlanjekar/todo-cicd.git'
+                git url:'https://github.com/Avejlanjekar/todo-cicd.git', branch:'main'
             }
         }
 
