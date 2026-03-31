@@ -18,6 +18,10 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
+app.get("/home",(req,res)=>{
+  res.send("hello from home page");
+})
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () =>
