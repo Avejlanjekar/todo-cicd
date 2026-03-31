@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "avejlanjekar45/todo-app"
+        MONGO_URI=credentials('mongo-uri')
     }
 
     stages {
@@ -42,7 +43,7 @@ pipeline {
                 sh '''
                 docker stop todo-container || true
                 docker rm todo-container || true
-                docker run -d -p 5000:5000 --name todo-container $DOCKER_IMAGE
+                docker run -d -p 5000:5000 --name todo-container -e $MONGO_URI $DOCKER_IMAGE
                 '''
             }
         }
