@@ -22,6 +22,10 @@ app.get("/home",(req,res)=>{
   res.send("hello from home page");
 })
 
+app.get("/webhook",(req,res)=>{
+  res.send("todooooo , testing for webhook")
+})
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () =>
